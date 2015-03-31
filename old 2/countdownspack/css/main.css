@@ -1,0 +1,164 @@
+/*	0.  Reset & Clearfix (http://meyerweb.com/eric/tools/css/reset/)
+/* ------------------------------------------------------------------------------- */
+
+	html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,and,address,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video,input,textarea,select{margin:0;padding:0;outline:0;border:0;background:transparent;vertical-align:baseline;font-size:100%;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}body{line-height:1;}abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help;}blockquote,q{quotes:none;}blockquote:before,blockquote:after,q:before,q:after{content:none;}del{text-decoration:line-through;}hr{clear:both;margin:0;padding:0;height:1px;border:0;background:transparent;color:transparent;}mark{background-color:#ffffb3;font-style:italic;}input,select{vertical-align:middle;}ins{background-color:red;color:#fff;text-decoration:none;}ol,ul{list-style:none;}table{border-collapse:collapse;border-spacing:0;}
+
+	.clear{clear:both;display:block;visibility:hidden;overflow:hidden;width:0;height:0;}.clearfix:after{clear:both;display:block;visibility:hidden;width:0;height:0;content:' ';font-size:0;line-height:0;}* html .clearfix,:first-child+html .clearfix{zoom:1;}
+
+
+/*	1.  Document Setup
+/* ------------------------------------------------------------------------------- */
+
+body {
+	background: url(../images/background.jpg);
+	font: normal 16px 'Open Sans',Helvetica,Arial;
+}
+
+.content-wrapper {
+	margin: 0 auto;
+	width: 310px;
+	text-align: center;
+}
+
+.logo {
+	width: 310px;
+	height: 150px;
+	background: url(../images/logo.png);
+}
+
+.purchase {
+	margin: 0 auto;
+	width: 250px;
+	height: 40px;
+	font-size: 14px;
+	color: #fff;
+	text-transform: uppercase;
+	line-height: 40px;
+	border-radius: 5px;
+	background-color: #525b62;
+	-webkit-transition: background .5s ease;
+	-moz-transition: background .5s ease;
+	-o-transition: background .5s ease;
+	transition: background .5s ease;
+	-ms-transition: background .5s ease;
+}
+
+.purchase:hover {
+	background-color: #0097c3;
+}
+
+.themes {
+	margin-top: 70px;
+}
+
+.n-clouds, .n-epic, .n-action, .n-sport, .n-photo {
+	margin: 0 auto;
+	margin-top: -23px;
+	width: 200px;
+	height: 30px;
+	font-size: 14px;
+	color: #fff;
+	text-transform: uppercase;
+	line-height: 30px;
+	border-radius: 5px;
+	-webkit-transition: background .5s ease;
+	-moz-transition: background .5s ease;
+	-o-transition: background .5s ease;
+	transition: background .5s ease;
+	-ms-transition: background .5s ease;
+}
+
+.n-photo {
+	background-color: #b89676;
+}
+
+.n-clouds {
+	background-color: #525b62;
+}
+
+.n-epic {
+	background-color: #313642;
+}
+
+.n-action {
+	background-color: #080f1c;
+}
+
+.n-sport {
+	background-color: #350f01;
+}
+
+a:hover .n-clouds, a:hover .n-epic, a:hover .n-action, a:hover .n-sport, a:hover .n-photo {
+	background-color: #0097c3;
+}
+
+.t-clouds {
+	width: 310px;
+	height: 152px;
+	background: url(../images/01.png);
+}
+
+.t-epic {
+	width: 310px;
+	height: 152px;
+	background: url(../images/02.png);
+}
+
+.t-action {
+	width: 310px;
+	height: 152px;
+	background: url(../images/03.png);
+}
+
+.t-sport {
+	width: 310px;
+	height: 152px;
+	background: url(../images/04.png);
+}
+
+.t-photo {
+	width: 310px;
+	height: 152px;
+	background-image: url(../images/05.png);
+}
+
+li {
+	margin-bottom: 50px;
+}
+
+a {
+	text-decoration: none;
+}
+
+.footer {
+	color: #808080;
+	font-size: 12px;
+	margin-bottom: 30px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+  	.logo {
+	background-image: url(../images/logo@2x.png);
+	background-size: 310px 150px;
+	}
+	.t-clouds {
+    background-image: url(../images/01@2x.png);
+    background-size: 310px 152px;
+  	}
+	.t-epic {
+    background-image: url(../images/02@2x.png);
+    background-size: 310px 152px;
+  	}
+  	.t-action {
+	background-image: url(../images/03@2x.png);
+	background-size: 310px 152px;
+	}
+	.t-sport {
+    background-image: url(../images/04@2x.png);
+    background-size: 310px 152px;
+  	}
+	.t-photo {
+    background-image: url(../images/05@2x.png);
+    background-size: 310px 152px;
+  	}
+}

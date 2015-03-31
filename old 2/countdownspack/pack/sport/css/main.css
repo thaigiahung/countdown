@@ -1,0 +1,764 @@
+
+/* Main CSS
+-------------------------------------------------------------------------------
+
+    0. CSS Reset & Clearfix
+    1. Document Setup
+    2. Content - Logo, Title, Subscribe, Social icons
+    3. Parallax
+    4. Countdown
+    5. Background
+    6. Footer
+    7. Media Queries
+
+---------------------------------------------------------------------------------- */
+
+
+/*	0.  Reset & Clearfix (http://meyerweb.com/eric/tools/css/reset/)
+/* ------------------------------------------------------------------------------- */
+
+	html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,and,address,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video,input,textarea,select{margin:0;padding:0;outline:0;border:0;background:transparent;vertical-align:baseline;font-size:100%;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}body{line-height:1;}abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help;}blockquote,q{quotes:none;}blockquote:before,blockquote:after,q:before,q:after{content:none;}del{text-decoration:line-through;}hr{clear:both;margin:0;padding:0;height:1px;border:0;background:transparent;color:transparent;}mark{background-color:#ffffb3;font-style:italic;}input,select{vertical-align:middle;}ins{background-color:red;color:#fff;text-decoration:none;}ol,ul{list-style:none;}table{border-collapse:collapse;border-spacing:0;}
+
+	.clear{clear:both;display:block;visibility:hidden;overflow:hidden;width:0;height:0;}.clearfix:after{clear:both;display:block;visibility:hidden;width:0;height:0;content:' ';font-size:0;line-height:0;}* html .clearfix,:first-child+html .clearfix{zoom:1;}
+
+
+/*	1.  Document Setup
+/* ------------------------------------------------------------------------------- */
+
+html {
+	width: 100%;
+	min-height: 100%;
+	background: #000;
+}
+
+body {
+	overflow-x: hidden;
+	width: 100%;
+	min-height: 100%;
+	color: #fff;
+	font: normal 16px 'Open Sans',Helvetica,Arial;
+}
+
+p {
+	font: normal normal 400 16px/normal 'Open Sans',Helvetica,Arial;
+}
+
+/*	2.  Content - Logo, Title, Subscribe, Social icons
+/* ------------------------------------------------------------------------------- */
+
+.content-wrapper {
+	width: 100%;
+	height: 1000px;
+	top: 0;
+	position: relative;
+	overflow-x: hidden;
+}
+
+#content {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	z-index: 1;
+	margin-left: -300px;
+	padding-top: 10px;
+	padding-bottom: 30px;
+	width: 600px;
+	background: none;
+	text-align: center;
+}
+
+#content-background {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -300px;
+	width: 600px;
+	height: 500px;
+	background: rgba(255,60,0,0.8);
+}
+
+#logo {
+	margin: 0 auto;
+	padding: 0 10px;
+	max-width: 600px;
+	max-height: 160px;
+}
+
+#logo img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.main-title{
+	margin: 10px 0;
+	background: #000;
+	color: #fff;
+	text-transform: uppercase;
+	font: normal 48px 'Oswald', Impact, sans-serif;
+}
+
+/* --- subscribe --- */
+
+.subscribe_field {
+	position: relative;
+    display: inline-block;
+    margin-top: 40px;
+    width: 400px;
+    height: 40px;
+    border: 1px solid #f0732b;
+    border-radius: 8px;
+    background: #000;
+}
+
+.subscribe_field input {
+	float: left;
+	margin-left: 10px;
+	width: 280px;
+	height: 40px;
+	color: #fff;
+    font-size: 14px;
+    font-family: 'Open Sans';
+    line-height: 40px;
+}
+
+.subscribe_field button {
+	position: relative;
+	right: 0;
+    float: right;
+    margin: 4px;
+    width: 100px;
+    height: 32px;
+    border: none;
+    border-radius: 4px;
+    background: #ff3c00;
+    color: #fff;
+    font-size: 14px;
+    font-family: 'Open Sans';
+    cursor: pointer;
+    -webkit-transition: background .5s ease;
+	-moz-transition: background .5s ease;
+	-o-transition: background .5s ease;
+	transition: background .5s ease;
+	-ms-transition: background .5s ease;
+}
+
+.subscribe_field button:hover {
+    background: #edd400;
+}
+
+.subscribe_field button:active {
+    right: -1px;
+}
+
+.subscribe_field .flabel {
+    position: absolute;
+    left: 10px;
+    height: 40px;
+    color: #808080;
+    font-size: 14px;
+    line-height: 42px;
+}
+
+/* --- error --- */
+
+.error {
+    background: rgba(75,0,0,0.8);
+}
+
+/* --- good --- */
+
+.good {
+    background: #edd400;
+    border: 0 solid #f0732b;
+    line-height: 40px;
+    color: #000;
+}
+
+.good:after {
+	content: 'Thanks for subscribing';
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.good input {
+	display: none;
+}
+
+.good button {
+	display: none;
+}
+
+.good .flabel {
+    display: none;
+}
+
+/* --- social --- */
+
+.social {
+	margin: 10px auto;
+	text-align: center;
+}
+
+.social li {
+	display: inline-block;
+	margin: 5px 5px 5px 0;
+	width: 26px;
+	height: 26px;
+	border-radius: 3px;
+	background: none;
+	-webkit-transition: background-color .5s ease;
+	-moz-transition: background-color .5s ease;
+	-o-transition: background-color .5s ease;
+	transition: background-color .5s ease;
+	-ms-transition: background-color .5s ease;
+}
+
+.social li:hover {
+	background: #000;
+}
+
+.icon-facebook,.icon-twitter,.icon-google,.icon-flickr,.icon-pinterest,.icon-vimeo,.icon-youtube,.icon-linkedin,.icon-instagram,.icon-skype,.icon-vkontakte,.icon-tumblr,.icon-rss,.icon-picasa,.icon-deviant,.icon-wordpress,.icon-dribble {
+	width: 26px;
+	height: 26px;
+}
+
+.icon-facebook {
+	background: url(../images/social.png);
+}
+
+.icon-twitter {
+	background: url(../images/social.png) -26px 0;
+}
+
+.icon-google {
+	background: url(../images/social.png) -52px 0;
+}
+
+.icon-flickr {
+	background: url(../images/social.png) -78px 0;
+}
+
+.icon-pinterest {
+	background: url(../images/social.png) -104px 0;
+}
+
+.icon-vimeo {
+	background: url(../images/social.png) -130px 0;
+}
+
+.icon-youtube {
+	background: url(../images/social.png) -156px 0;
+}
+
+.icon-linkedin {
+	background: url(../images/social.png) -182px 0;
+}
+
+.icon-instagram {
+	background: url(../images/social.png) -208px 0;
+}
+
+.icon-skype {
+	background: url(../images/social.png) -234px 0;
+}
+
+.icon-vkontakte {
+	background: url(../images/social.png) -260px 0;
+}
+
+.icon-tumblr {
+	background: url(../images/social.png) -286px 0;
+}
+
+.icon-rss {
+	background: url(../images/social.png) -312px 0;
+}
+
+.icon-picasa {
+	background: url(../images/social.png) -338px 0;
+}
+
+.icon-deviant {
+	background: url(../images/social.png) -364px 0;
+}
+
+.icon-wordpress {
+	background: url(../images/social.png) -390px 0;
+}
+
+.icon-dribble {
+	background: url(../images/social.png) -416px 0;
+}
+
+/*	3.  Parallax
+/* ------------------------------------------------------------------------------- */
+
+.parallax-viewport {
+    position: relative;     /* relative, absolute, fixed */
+    overflow: hidden;
+}
+
+.parallax-layer {
+    position: absolute;
+}
+
+#parallax-section {
+	position: absolute;
+	left: 50%;
+	margin-left: -800px;
+	top: 300px;
+	width: 1600px;
+	height: 500px;
+}
+
+#back-layer {
+	width: 1550px;
+	height: 550px;
+	position: absolute;
+    left: 0; 
+    top: 0;
+	background: url(../images/parallax-back-layer.png);
+	background-position: 0 0;
+}
+
+#front-layer {
+	width: 1700px;
+	height: 600px;
+	position: absolute; 
+    left: 0; 
+    top: 0;
+	background: url(../images/parallax-front-layer.png);
+	background-position: 0 0;
+}
+
+#countdown-wrapper {
+	padding-top: 200px;
+	width: 1620px;
+	height: 320px;
+}
+
+#countdown {
+	margin: 0 auto;
+	width: 720px;
+}
+
+/*	4.  Countdown
+/* ------------------------------------------------------------------------------- */
+
+.artrow-countdown {
+    width: 100%;
+    margin: 0 auto;
+    display: inline-block;
+    height: 100%;
+    text-align: center;
+}
+
+.artrow-countdown label {
+    display: block;
+    margin: 0 auto;
+}
+
+.artrow-countdown .time {
+    margin-bottom: 40px;
+}
+
+.artrow-countdown .separator,
+.artrow-countdown .time {
+    display: inline-block;
+    height: 110px;
+}
+
+.artrow-countdown .separator {
+    width: 30px;
+    background: none;
+    height: 10px;
+}
+
+.artrow-countdown .number {
+    display: block;
+	background: url(../images/digits.png) no-repeat; /* Comment this for disable 3D digits. Read documentation for more info */
+    width: 70px;
+    height: 110px;
+    float: left;
+}
+
+.artrow-countdown .number .value {
+    visibility: hidden; /* Change to "visible" for display digits */
+    font: normal 120px/120px Impact, sans-serif;
+    color: #e75700;
+}
+
+.artrow-countdown .clearfix {
+    clear: both;
+}
+
+/* Comment this for displaying titles over digits and uncomment below */
+
+.artrow-countdown .days:after,
+.artrow-countdown .hours:after,
+.artrow-countdown .minutes:after,
+.artrow-countdown .seconds:after {
+    display: block;
+    color: #e75700;
+    width: 140px;
+    height: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.artrow-countdown .days:after {
+	max-width: 210px;
+    width: 100%;
+    content: 'DAYS';
+}
+
+.artrow-countdown .hours:after {
+    content: 'HOURS';
+}
+
+.artrow-countdown .minutes:after {
+    content: 'MINUTES';
+}
+
+.artrow-countdown .seconds:after {
+    content: 'SECONDS';
+}
+
+/* Uncomment this for displaying titles over digits
+
+.artrow-countdown .days:before,
+.artrow-countdown .hours:before,
+.artrow-countdown .minutes:before,
+.artrow-countdown .seconds:before {
+    display: block;
+    color: #e75700;
+    width: 140px;
+    height: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.artrow-countdown .days:before {
+    width: 100%;
+    content: 'DAYS';
+}
+
+.artrow-countdown .hours:before {
+    content: 'HOURS';
+}
+
+.artrow-countdown .minutes:before {
+    content: 'MINUTES';
+}
+
+.artrow-countdown .seconds:before {
+    content: 'SECONDS';
+}
+--------------------------------------------------------------------- */
+
+/*	5.  Background
+/* ------------------------------------------------------------------------------- */
+
+#bg-video {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	z-index:-5;
+	margin-left: -540px;
+	width: 1080px; /* Use WIDTH from file */
+	height: 600px; /* Use HEIGHT from file */ 
+}
+
+.bg-left { /* left fence */
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 25%;
+	height: 500px;
+	background: url(../images/fence.png);
+}
+
+.bg-right { /* right fence */
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 25%;
+	height: 500px;
+	background: url(../images/fence.png);
+}
+
+.chain-left { 
+	position: absolute;
+	top: 0;
+	right: -25px;
+	width: 46px;
+	height: 100%;
+	background: url(../images/chain-left.png);
+}
+
+.chain-right {
+	position: absolute;
+	top: 0;
+	left: -25px;
+	width: 46px;
+	height: 100%;
+	background: url(../images/chain-right.png);
+}
+
+.chain-small-left {
+	position: absolute;
+	top: 0;
+	left: -80px;
+	width: 125px; 
+	height: 500px;
+	background: url(../images/chain-small-left.png);
+}
+
+.chain-small-right {
+	position: absolute;
+	top: 0;
+	right: -80px;
+	width: 125px; 
+	height: 500px;
+	background: url(../images/chain-small-right.png);
+}
+
+#bg-animate-left-wrapper {
+	position: absolute;
+	top: 480px;
+	left: 0;
+	overflow: hidden;
+	width: 50%;
+	height: 141px;
+}
+
+#bg-animate-right-wrapper {
+	position: absolute;
+	top: 480px;
+	right: 0;
+	overflow: hidden;
+	width: 50%;
+	height: 141px;
+}
+
+#bg-animate-left {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 932px;
+	height: 141px;
+	background: url(../images/bg-anim-left.png);
+}
+
+#bg-animate-right {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 932px;
+	height: 141px;
+	background: url(../images/bg-anim-right.png);
+}
+
+#bg-video-hover {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -540px;
+	width: 1080px; /* Use WIDTH from file */
+	height: 600px; /* Use HEIGHT from file */
+	background: transparent url(../images/bg-video-hover.png) no-repeat;
+}
+
+/*	6.  Footer
+/* ------------------------------------------------------------------------------- */
+
+.footer {
+	margin: 0 auto;
+	margin-top: 530px; 
+	padding-bottom: 30px;
+	width: 200px;
+	color: #333;
+	text-align: center;
+	font-size: 14px;
+}
+
+.footer span {
+	font-size: 12px;
+}
+
+/*	7.  Media Queries
+/* ------------------------------------------------------------------------------- */
+
+/* Smaller than 720px (devices and browsers) */
+@media screen and (max-width: 720px) {
+
+	#countdown {
+		width: 420px;
+	}
+
+	#logo {
+		max-width: 420px;
+	}
+
+	.chain-small-left {
+		left: 0;
+	}
+
+	.chain-small-right {
+		right: 0;
+	}
+
+	#bg-video {
+		display: none;
+	}
+
+	#bg-video-hover {
+		background: transparent url(../video/poster.jpg) no-repeat;
+	}	
+}
+
+/* Smaller than 480px (devices and browsers) */
+@media screen and (max-width: 480px) {
+
+	.content-wrapper {
+		height: 1300px;
+	}
+
+	#content {
+		margin-left: -160px;
+		width: 320px;
+	}
+
+	#content-background {
+		width: 100%;
+		margin-left: -50%;
+	}
+
+	#logo {
+		max-width: 320px;
+	}
+
+	.subscribe_field {
+	    width: 300px;
+	}
+
+	.subscribe_field input {
+	    width: 180px;
+	}
+
+	#parallax-section { /* Disable parallax for mobiles. */
+		top: 320px;
+	}
+
+	#countdown {
+		width: 250px;
+	}
+
+	.chain-small-left, .chain-small-right {
+		display: none;
+	}
+
+	.footer {
+		margin-top: 850px; 
+	}
+}
+
+/* Smaller than 320px (devices and browsers) */
+@media screen and (max-width: 320px) {
+
+	.content-wrapper {
+		height: 1400px;
+	}
+
+	#content {
+		margin-left: -160px;
+		width: 240px;
+		padding: 0 40px;
+	}
+
+	#logo {
+		max-width: 240px;
+		overflow: hidden;
+	}
+
+	.subscribe_field {
+	    width: 240px;
+	}
+
+	.subscribe_field input {
+	    width: 140px;
+	}
+
+	.subscribe_field button {
+	    width: 80px;
+	}
+
+	#countdown {
+		width: 240px;
+	}
+
+	.artrow-countdown .separator {
+	    width: 0;
+	}
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+	.icon-facebook,.icon-twitter,.icon-google,.icon-flickr,.icon-pinterest,.icon-vimeo,.icon-youtube,.icon-linkedin,.icon-instagram,.icon-skype,.icon-vkontakte,.icon-tumblr,.icon-rss,.icon-picasa,.icon-deviant,.icon-wordpress,.icon-dribble {
+		background-image: url(../images/social@2x.png);
+		background-size: 442px 26px;
+	}
+	#back-layer {
+		background-image: url(../images/parallax-back-layer@2x.png);
+		background-size: 1550px 550px;
+	}
+	#front-layer {
+		background-image: url(../images/parallax-front-layer@2x.png);
+		background-size: 1700px 600px;
+	}
+	.artrow-countdown .number {
+	    background-image: url(../images/digits@2x.png);
+		background-size: 700px 1210px;
+	}
+	.bg-left, .bg-right { /* left fence */
+		background-image: url(../images/fence@2x.png);
+		background-size: 402px 288px;
+	}
+	.chain-left { 
+		background-image: url(../images/chain-left@2x.png);
+		background-size: 46px 112px;
+	}
+	.chain-right {
+		background-image: url(../images/chain-right@2x.png);
+		background-size: 46px 112px;
+	}
+	.chain-small-left {
+		background-image: url(../images/chain-small-left@2x.png);
+		background-size: 125px 500px;
+	}
+	.chain-small-right {
+		background-image: url(../images/chain-small-right@2x.png);
+		background-size: 125px 500px;
+	}
+	#bg-animate-left {
+		background-image: url(../images/bg-anim-left@2x.png);
+		background-size: 233px 141px;
+	}
+	#bg-animate-right {
+		background-image: url(../images/bg-anim-right@2x.png);
+		background-size: 233px 141px;
+	}
+	#bg-video-hover {
+		background-image: url(../images/bg-video-hover@2x.png);
+		background-size: 1080px 600px;
+	}
+
+	@media screen and (max-width: 720px) {
+		#bg-video-hover {
+			background: url(../video/poster@2x.jpg);
+			background-size: 1080px 600px;
+		}	
+	}
+}

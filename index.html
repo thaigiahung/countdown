@@ -1,85 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+	<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Hưng &#9825; Thi</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Exo+2:400,100,100italic,200,200italic,300,300italic,400italic,500,500italic,700,700italic,600,600italic' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="css/bg-slider.css" />
+		<link rel="stylesheet" type="text/css" href="clock/css/clock.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/responsive.css">
+		<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+	</head>
+	<body class="singleimg">
+		<!--[if lt IE 7]>
+		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
 
-    <title>Hưng &#9825; Thi</title>
+		<section class="mainarea">
+			<div id="clock" class="active">
+				<div class="clock-container">
+					<div id="time-container-wrap">
+						<div id="time-container">
+							<div class="numbers-container"></div>
+							<!-- <span id="ticker" class="clock-label">CÒN</span> -->
+							<span id="timelable" class="clock-label"></span>
+							<span id="timeleft" class="clock-label"></span>
+							<figure id="canvas"></figure>
+						</div>
+					</div>
+				</div>
+			</div>			
+		</section>
+		
 
-    <meta name="description" content="ArtRow Countdowns Pack - Photos">
-    <meta name="author" content="ArtRow">
+		<script src="js/vendor/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/vendor/classie.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/vendor/jquery.easing.1.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/vendor/jquery.tubular.1.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/vendor/jquery.cycle.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/plugins.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
 
-    <link rel="stylesheet" href="css/main.css" media="screen">
-    <link rel="stylesheet" href="css/component.css" />
-
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
-
-    <script src="js/modernizr.custom.js"></script>
-
-</head>
-
-	<body>
-        <div class="content-wrapper">
-
-            <!-- Animated background. Fullscreen. -->
-            <ul id="cbp-bislideshow" class="cbp-bislideshow">
-                <li><img src="images/pts/1.jpg" alt="1"/></li>
-                <li><img src="images/pts/3.jpg" alt="3"/></li>
-                <li><img src="images/pts/4.jpg" alt="4"/></li>
-                <!-- <li><img src="images/pts/6.jpg" alt="6"/></li> -->
-                <!-- <li><img src="images/pts/7.jpg" alt="7"/></li> -->
-                <li><img src="images/pts/9.jpg" alt="9"/></li>
-                <li><img src="images/pts/10.jpg" alt="10"/></li>
-                <li><img src="images/pts/14.jpg" alt="14"/></li>
-                <li><img src="images/pts/15.jpg" alt="15"/></li>
-                <li><img src="images/pts/16.jpg" alt="16"/></li>
-                <li><img src="images/pts/17.jpg" alt="17"/></li>
-                <li><img src="images/pts/20.jpg" alt="20"/></li>
-                <li><img src="images/pts/22.jpg" alt="22"/></li>
-                <li><img src="images/pts/24.jpg" alt="24"/></li>
-                <!-- <li><img src="images/pts/25.jpg" alt="25"/></li> -->
-                <!-- <li><img src="images/pts/27.jpg" alt="27"/></li> -->
-                <li><img src="images/pts/28.jpg" alt="28"/></li>
-                <li><img src="images/pts/30.jpg" alt="30"/></li>
-            </ul>
-            <!-- /Animated background. Fullscreen. -->
-
-            <!-- Static Background -->
-            <div id="content-background"></div>
-            <!-- /Static Background -->
-            
-            <!-- Content. Logo. Subscribe. Social -->
-            <!-- <div id="content">
-                <div class="main-title">Hưng &#9825; Thi</div>
-                <div class="sub-title">04-07-2015</div>
-
-            </div> -->
-            <!-- /Content. Logo. Subscribe. Social -->
-
-            <!-- Parallax. Countdown. Footer -->
-            <div id="parallax-section">
-                <div class="parallax-layer" id="-layer"></div>
-                <div class="parallax-layer" id="countdown-wrapper">
-                    <div id="countdown"></div>
-                <div class="parallax-layer" id="front-layer"></div>
-                </div>
-
-            </div>
-            <!-- /Parallax. Countdown. Footer -->
-        </div>
-
-        <script src="js/jquery-1.10.2.min.js"></script>
-        <script src="js/retina.js"></script>
-        <script src="js/date.js"></script>
-        <script src="js/countdown.min.js"></script>
-        <script src="js/jquery.imagesloaded.min.js"></script>
-        <script src="js/cbpBGSlideshow.min.js"></script>
-        <script src="js/jquery.parallax.js"></script>
-        <script src="js/jquery.infieldlabel.min.js"></script>
-        <script src="js/settings.js"></script>
-
-    </body>
-
+		<script src="clock/js/svg.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="clock/js/svg.easing.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="clock/js/svg.clock.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/vendor/ThreeWebGL.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/vendor/ThreeExtras.js" type="text/javascript" charset="utf-8"></script>
+		<script src="clock/js/jquery.timers.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="clock/js/clock.js" type="text/javascript" charset="utf-8"></script>
+	</body>
 </html>
