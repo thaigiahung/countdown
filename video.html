@@ -15,7 +15,20 @@
 </head> 
  
 <body>
-	<iframe width="1280" height="720" src="https://www.youtube.com/embed/NFqlteyMXrQ?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>
+	<iframe id="frmVideo" src="https://www.youtube.com/embed/NFqlteyMXrQ?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>
+	
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type='text/javascript'>
+		$( document ).ready(function() {
+		    var height = $(window).height();   // returns height of browser viewport		    
+		    var width = $(window).width();   // returns width of browser viewport
+		    console.log(width);
+		    console.log(height);
+
+		    $("#frmVideo").width(width);
+            $("#frmVideo").height(height);
+		});
+	</script>
 </body> 
 </html>
 
